@@ -75,7 +75,7 @@ public class SellerFormController implements Initializable {
 	private Label labelErrorBirthDate;
 
 	@FXML
-	private Label labelErrorBasesalary;
+	private Label labelErrorBaseSalary;
 
 	@FXML
 	private Button btnSave;
@@ -219,16 +219,11 @@ public class SellerFormController implements Initializable {
 
 	private void setErrorMessages(Map<String, String> errors) {
 		Set<String> fields = errors.keySet();
-
-
-		labelError.setText(fields.contains("name") ? errors.get("name") : "");
 		
-		labelErrorEmail.setText(fields.contains("email") ? errors.get("email") : "");
-		
-		labelErrorBasesalary.setText(fields.contains("baseSalary") ? errors.get("baseSalary") : "");
-	
-		labelErrorBirthDate.setText(fields.contains("birthDate") ? errors.get("birthDate") : "");
-	
+		labelError.setText((fields.contains("name") ? errors.get("name") : ""));
+		labelErrorEmail.setText((fields.contains("email") ? errors.get("email") : ""));
+		labelErrorBirthDate.setText((fields.contains("birthDate") ? errors.get("birthDate") : ""));
+		labelErrorBaseSalary.setText((fields.contains("baseSalary") ? errors.get("baseSalary") : ""));
 	}
 
 	private void initializeComboBoxDepartment() {
